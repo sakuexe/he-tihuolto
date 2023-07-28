@@ -1,9 +1,24 @@
 ---
-import SectHeader from '../components/sectheader.tsx'
+// components
+import SectionHeader from '../components/sectheader.tsx'
+import Card from '../components/card.tsx'
+// types
+import type { Service } from '../components/card.tsx'
+// data
+import services from '../json/services.json'
 ---
 
-<article class='sectcontainer'>
-  <SectHeader topic="Palvelumme">
+<article class="sectioncontainer">
+  <SectionHeader topic="Palvelumme">
     Tarjoamme palvelut esilteltynä helposti seurattavassa listassa.
-  </SectHeader>
+  </SectionHeader>
+  <p>
+    Vitae nulla suspendisse pretium elementum feugiat feugiat ante massa.
+    Gravida purus ultrices quis viverra curabitur et enim. Nec bibendum ut sed
+    enim. Eu rutrum tristique dis consectetur viverra ullamcorper sit nec. Risus
+    egestas.
+  </p>
+  <div class="flex flex-wrap justify-center gap-5">
+    {services.map((service: Service, index: number) => <Card service={service} index={index} />)}
+  </div>
 </article>

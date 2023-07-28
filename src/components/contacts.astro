@@ -1,0 +1,26 @@
+---
+import SectionHeader from '../components/sectheader.tsx'
+import contactInfo from '../json/contact.json'
+import ContactCard from '../components/contactcard.tsx'
+import ContactInfo from '../components/contactcard.tsx'
+---
+
+<article class="sectioncontainer">
+  <SectionHeader topic="Yhteystiedot">
+    Kiinnostuitko? Ota siinä tapauksessa meihin yhteyttä parhaaksi kokemallasi
+    tavalla.
+  </SectionHeader>
+  <p>
+    Vitae nulla suspendisse pretium elementum feugiat feugiat ante massa.
+    Gravida purus ultrices quis viverra curabitur et enim. Nec bibendum ut sed
+    enim. Eu rutrum tristique dis consectetur viverra ullamcorper sit nec. Risus
+    egestas.
+  </p>
+  <div class="flex flex-wrap justify-center item-center gap-8 py-4">
+    {
+      contactInfo.map((contact: ContactInfo, index: number) => (
+        <ContactCard contact={contact} index={index} />
+      ))
+    }
+  </div>
+</article>

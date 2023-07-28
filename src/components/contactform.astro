@@ -1,0 +1,48 @@
+---
+const FORM_KEY = import.meta.env.FORM_ACCESS_KEY
+const className = "rounded-md bg-transparent py-2 px-4 w-full"
+const inputContainer = "rounded-md bg-primary flex"
+---
+
+<section class="bg-secondary-600 py-12 relative overflow-hidden isolate">
+  <div class="sectioncontainer">
+    <h4 class="text-primary text-xl font-bold">Yhteydenotto lomakkeella</h4>
+    <p class="text-primary">
+      Jätä meille sähköpostiosoitteesi ja viestisi, niin olemme sinuun pian
+      yhteydessä sähköpostilla. Voit myös jättää muutakin tietoa taikka
+      kysymyksiä. Pyrimme vastaamaan viesteihin heti kun on mahdollista.
+    </p>
+    <form
+      action="https://api.staticforms.xyz/submit"
+      method="post"
+      class="flex flex-col gap-2 text-secondary-700"
+    >
+      <input type="hidden" name="accessKey" value={FORM_KEY} />
+      <div class={inputContainer}>
+        <div class="bg-secondary flex items-center px-2 rounded-l-md">
+        <img src="/images/email.svg" alt="" class="h-7">
+        </div>
+      <input type="text" name="email" placeholder="osoitteesi@email.com" maxlength="40" class={className} />
+      </div>
+      <div class={inputContainer}>
+      <textarea name="message" placeholder="Viestisi tähän..." maxlength="1000" rows="3" class={className}></textarea>
+      </div>
+      <input type="hidden" name="replyTo" value="@" />
+      <!--
+  <input
+    type="hidden"
+    name="redirectTo"
+    value="https://example.com/contact/success"
+  />
+  -->
+      <div class="overflow-hidden flex w-52 transition-all 
+        hover:drop-shadow-xl [&>*]:hover:cursor-pointer">
+      <input type="submit" value="Lähetä viestisi" class="flex-grow bg-primary py-2 px-4 rounded-l-md" />
+        <div class="bg-secondary flex items-center justify-center rounded-r-md aspect-square px-2">
+          <img src="/images/send.svg" alt="" class="h-6 pr-1">
+        </div>
+      </div>
+    </form>
+  </div>
+  <img src="/images/hetitree.png" alt="" role="presentation" class="aspect-square absolute -right-4 bottom-0 opacity-20 -z-10 mix-blend-screen">
+</section>

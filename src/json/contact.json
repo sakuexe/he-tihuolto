@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Puhelimitse",
+    "image": "/images/phone.svg",
+    "contacts": [
+      {
+        "name": "päänumero",
+        "value": "040 123 4567"
+      },
+      {
+        "name": "sijaisnumero",
+        "value": "044 098 7654"
+      }
+    ]
+  },
+  {
+    "title": "Sosiaalisessa mediassa",
+    "image": "/images/socialmedia.svg",
+    "contacts": [
+      {
+        "name": "Facebook",
+        "value": "He-Ti Huolto",
+        "link": "https://img.freepik.com/premium-vector/blue-social-media-logo_197792-1759.jpg"
+      },
+      {
+        "name": "Instagram",
+        "value": "@hetihuolto",
+        "link": "https://cdn-icons-png.flaticon.com/512/3621/3621435.png"
+      }
+    ]
+  },
+  {
+    "title": "Sähköpostilla",
+    "image": "/images/email.svg",
+    "contacts": [
+      {
+        "value": "hetihuolto@gmail.com",
+        "link": "mailto:hetihuolto@gmail.com"
+      },
+      {
+        "value": "hetihuoltovara@gmail.com",
+        "link": "mailto:hetihuoltovara@gmail.com"
+      }
+    ]
+  }
+]

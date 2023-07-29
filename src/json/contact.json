@@ -5,11 +5,11 @@
     "contacts": [
       {
         "name": "päänumero",
-        "value": "040 123 4567"
+        "value": "+358 040 123 4567"
       },
       {
         "name": "sijaisnumero",
-        "value": "044 098 7654"
+        "value": "+358 0044 098 7654"
       }
     ]
   },
@@ -18,14 +18,14 @@
     "image": "/images/socialmedia.svg",
     "contacts": [
       {
-        "name": "Facebook",
-        "value": "He-Ti Huolto",
-        "link": "https://img.freepik.com/premium-vector/blue-social-media-logo_197792-1759.jpg"
-      },
-      {
         "name": "Instagram",
         "value": "@hetihuolto",
         "link": "https://cdn-icons-png.flaticon.com/512/3621/3621435.png"
+      },
+      {
+        "name": "Facebook",
+        "value": "He-Ti Huolto",
+        "link": "https://img.freepik.com/premium-vector/blue-social-media-logo_197792-1759.jpg"
       }
     ]
   },

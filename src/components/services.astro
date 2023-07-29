@@ -8,7 +8,7 @@ import type { Service } from '../components/card.tsx'
 import services from '../json/services.json'
 ---
 
-<article class="sectioncontainer">
+<article id="services" class="sectioncontainer">
   <SectionHeader topic="Palvelumme">
     Tarjoamme palvelut esilteltynä helposti seurattavassa listassa.
   </SectionHeader>
@@ -19,6 +19,10 @@ import services from '../json/services.json'
     egestas.
   </p>
   <div class="flex flex-wrap justify-center gap-5">
-    {services.map((service: Service, index: number) => <Card service={service} index={index} />)}
+    {
+      services.map((service: Service, index: number) => (
+        <Card service={service} index={index} />
+      ))
+    }
   </div>
 </article>

@@ -5,14 +5,16 @@ import Presentation from '../components/presentation.astro'
 import Services from '../components/services.astro'
 import Contacts from '../components/contacts.astro'
 import ContactForm from '../components/contactform.astro'
+import Footer from '../components/footer.astro'
 ---
 
 <Layout title="He-Ti Huolto">
   <header
-    class="flex items-end bg-secondary-600 text-primary h-[28rem] rounded-b-2xl relative isolate"
+    class="flex items-end bg-secondary-600 max-w-5xl mx-auto text-primary 
+    h-[28rem] rounded-b-2xl overflow-hidden relative isolate drop-shadow-md"
   >
-    <div class="mb-16 px-5 xs:px-8">
-      <HetiText width={80} height={40} />
+    <div class="mb-16 sectioncontainer">
+      <img src="/images/heti-teksti.svg" alt="He-Ti Huolto teksti" />
       <p class="font-bold text-4xl">
         Luotettavaa Kiinteistöhuoltoa Ammattitaidolla
       </p>
@@ -31,4 +33,5 @@ import ContactForm from '../components/contactform.astro'
     <Contacts />
     <ContactForm />
   </div>
+  <Footer />
 </Layout>

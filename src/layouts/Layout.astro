@@ -7,7 +7,7 @@ const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -16,7 +16,7 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-w-[356px]">
+  <body class="min-w-[356px] selection:bg-primary-500 selection:font-mono">
     <nav class=""></nav>
     <slot />
   </body>
@@ -27,21 +27,18 @@ const { title } = Astro.props
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
     --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
+      180deg,
+      theme(colors.secondary.DEFAULT),
+      theme(colors.secondary.700) 30%,
+      theme(colors.secondary.900) 60%
     );
   }
   html {
     @apply bg-primary;
   }
   .sectioncontainer {
-    @apply px-4 space-y-6 xs:px-8
+    @apply px-4 space-y-6 max-w-4xl mx-auto xs:px-8
   }
   code {
     font-family:
@@ -53,5 +50,11 @@ const { title } = Astro.props
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+  #formsection {
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 </style>

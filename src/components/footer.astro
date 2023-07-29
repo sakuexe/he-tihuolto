@@ -1,0 +1,64 @@
+---
+const currentYear = new Date().getFullYear()
+import contactInfo from '../json/contact.json'
+---
+
+<footer class="bg-secondary-600 text-primary py-10 text-sm">
+  <div class="sectioncontainer max-w-2xl">
+    <section class="flex justify-between items-center">
+      <div class="flex h-16 items-end gap-2">
+        <img
+          src="/images/hetitree.svg"
+          alt="He-Ti Huolto -logo"
+          class="h-full"
+        />
+        <img
+          src="/images/heti-teksti.svg"
+          alt="He-Ti Huolto -logo"
+          class="h-3/4"
+        />
+      </div>
+      <ul class="space-y-1">
+        {
+          contactInfo.map((contact) => (
+            <li class="flex justify-end items-center gap-x-2">
+              {contact.contacts[0].value}{' '}
+              <img
+                src={contact.image}
+                alt={`${contact.title} -ikoni`}
+                class="invert opacity-75 w-6 aspect-square"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <div class="space-y-2">
+      <p>
+        Vitae nulla suspendisse pretium elementum feugiat feugiat ante massa.
+        Gravida purus ultrices quis viverra curabitur et enim. Nec bibendum ut
+        sed enim. Eu rutrum tristique dis consectetur viverra ullamcorper sit
+        nec. Risus egestas.
+      </p>
+      <p class="italic opacity-50 text-sm">
+        &copy; He-Ti Huolto Oy — {currentYear}
+      </p>
+    </div>
+    <nav>
+      <ul
+        class="flex gap-x-2 justify-center [&>p]:opacity-50 [&>p]:select-none"
+      >
+        <li>
+          <a href="#" class="transition-all underline-offset-4 hover:underline"
+            >Etusivu</a>
+        </li>
+        <p>—</p>
+        <li><a href="#presentation">Meistä</a></li>
+        <p>—</p>
+        <li><a href="#services">Palvelumme</a></li>
+        <p>—</p>
+        <li><a href="#contacts">Yhteystiedot</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

@@ -39,7 +39,8 @@ export default function ContactCard({
           if (!contact.link)
             return (
               <p key={index}>
-                {contact.name}: {contact.value}
+                {contact.name}: <br />
+                {contact.value}
               </p>
             )
           return (

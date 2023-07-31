@@ -46,14 +46,14 @@ export default function MobileMenu(props: MenuProps) {
             </div>
           </li>
           <li className="space-y-2">
-            <a href="#services" className="font-bold text-xl">
+            <a href="#contacts" className="font-bold text-xl">
               Yhteystiedot
             </a>
             <div className="flex flex-col gap-y-2">
-              <a href="">Puhelinnumero</a>
-              <a href="">Sosiaaliset mediat</a>
-              <a href="">Sähköposti</a>
-              <a href="">Lomake</a>
+              <a href="#contacts">Puhelinnumero</a>
+              <a href="#contacts">Sosiaaliset mediat</a>
+              <a href="#contacts">Sähköposti</a>
+              <a href="#form">Lomake</a>
             </div>
           </li>
         </ul>
@@ -66,7 +66,7 @@ export default function MobileMenu(props: MenuProps) {
           {contacts.map((contact, index: number) => (
             <li className="flex items-center gap-x-2">
               <a
-                href={`#${contact.contacts[0].link || `#${contact.title}`}`}
+                href={`${contact.contacts[0].link || '#contacts'}`}
                 key={index}
               >
                 {contact.contacts[0].value}

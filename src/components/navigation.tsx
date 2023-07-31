@@ -6,7 +6,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className="fixed flex justify-between w-full top-0 z-40
+        className="fixed flex justify-between w-full top-0 z-40 mb-12
       text-primary px-5 py-2 drop-shadow-sm bg-secondary-600 lg:hidden"
       >
         <div className="flex items-end gap-x-2 h-12">

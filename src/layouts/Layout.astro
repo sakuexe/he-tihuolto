@@ -1,8 +1,9 @@
 ---
+import Navigation from '../components/navigation.tsx'
+
 interface Props {
   title: string
 }
-
 const { title } = Astro.props
 ---
 
@@ -17,7 +18,7 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body class="min-w-[356px] selection:bg-primary-500 selection:font-mono">
-    <nav class=""></nav>
+    <Navigation client:idle />
     <slot />
   </body>
 </html>

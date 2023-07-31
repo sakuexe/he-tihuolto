@@ -1,6 +1,7 @@
 ---
-const currentYear = new Date().getFullYear()
 import contactInfo from '../json/contact.json'
+
+const currentYear = new Date().getFullYear()
 ---
 
 <footer class="bg-secondary-600 text-primary py-10 text-sm">
@@ -26,7 +27,7 @@ import contactInfo from '../json/contact.json'
               <img
                 src={contact.image}
                 alt={`${contact.title} -ikoni`}
-                class="invert opacity-75 w-6 aspect-square"
+                class="opacity-75 w-6 aspect-square"
               />
             </li>
           ))

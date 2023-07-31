@@ -24,6 +24,7 @@ export default function ContactCard({
           src={contact.image}
           alt={`${contact.title} -ikoni`}
           role="menuitem"
+          className="invert"
         />
         <div
           className={`absolute inset-0 m-auto w-5/6 aspect-square 

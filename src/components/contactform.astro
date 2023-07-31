@@ -4,7 +4,7 @@ const className = 'rounded-md bg-transparent py-2 px-4 w-full'
 const inputContainer = 'rounded-md bg-primary flex'
 ---
 
-<section id="formsection" class="bg-secondary-600 py-12 relative overflow-hidden isolate">
+<section id="formsection" class="bg-secondary-600 py-12 my-16 relative overflow-hidden isolate">
   <div class="sectioncontainer">
     <h4 class="text-primary text-xl font-bold">Yhteydenotto lomakkeella</h4>
     <p class="text-primary">
@@ -20,7 +20,7 @@ const inputContainer = 'rounded-md bg-primary flex'
       <input type="hidden" name="accessKey" value={FORM_KEY} />
       <div class={inputContainer}>
         <div class="bg-secondary flex items-center px-2 rounded-l-md">
-          <img src="/images/email.svg" alt="" class="h-7" />
+          <img src="/images/email.svg" alt="" class="h-7 invert" />
         </div>
         <input
           type="text"
@@ -35,8 +35,8 @@ const inputContainer = 'rounded-md bg-primary flex'
           name="message"
           placeholder="Viestisi tähän..."
           maxlength="1000"
-          rows="3"
-          class={className}></textarea>
+          rows="4"
+          class={`${className} resize-none`}></textarea>
       </div>
       <input type="hidden" name="replyTo" value="@" />
       <!--

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Menu from '../components/menu.tsx'
 import Presentation from '../components/presentation.astro'
 import Services from '../components/services.astro'
 import Contacts from '../components/contacts.astro'
@@ -9,30 +10,29 @@ import Footer from '../components/footer.astro'
 
 <Layout title="He-Ti Huolto">
   <header
-    class="flex items-end bg-secondary-600 max-w-5xl mx-auto text-primary 
-    h-[28rem] rounded-b-2xl overflow-hidden relative isolate drop-shadow-md"
+    class="flex items-end bg-secondary-600 max-w-6xl mx-auto text-primary h-[28rem] rounded-b-2xl overflow-hidden relative isolate drop-shadow-md"
   >
     <div class="sectioncontainer mb-16">
-    <div>
-      <img src="/images/heti-teksti.svg" alt="He-Ti Huolto teksti" />
-      <p class="font-bold text-4xl">
-        Luotettavaa Kiinteistöhuoltoa Ammattitaidolla, Hämeenlinnassa
-      </p>
-      <p>— Ympäri vuoden toimiva kunnossapito</p>
-    </div>
-    <img
-      src="/images/hetitree.png"
-      alt=""
-      role="presentation"
-      class="absolute -right-2 bottom-0 w-[26rem] opacity-25 -z-10"
-    />
+      <div>
+        <img src="/images/heti-teksti.svg" alt="He-Ti Huolto teksti" />
+        <p class="font-bold text-4xl">
+          Luotettavaa Kiinteistöhuoltoa Ammattitaidolla, Hämeenlinnassa
+        </p>
+        <p>— Ympäri vuoden toimiva kunnossapito</p>
+      </div>
+      <img
+        src="/images/hetitree.png"
+        alt=""
+        role="presentation"
+        class="absolute -right-2 bottom-0 w-[26rem] opacity-25 -z-10"
+      />
     </div>
   </header>
-  <div class="mt-16 mb-20 space-y-20">
-    <Presentation />
-    <Services />
-    <Contacts />
-    <ContactForm />
-  </div>
+    <div class="mt-16 mb-20 space-y-20">
+      <Presentation />
+      <Services />
+      <Contacts />
+    </div>
+  <ContactForm />
   <Footer />
 </Layout>

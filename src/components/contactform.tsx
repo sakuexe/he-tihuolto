@@ -123,6 +123,12 @@ export default function ContactForm({ formKey }: { formKey: string }) {
         <input type="hidden" name="accessKey" value={formKey} />
         <input type="hidden" name="replyTo" value="@" />
       </form>
+      <img
+        src="/images/hetitree.png"
+        alt=""
+        role="presentation"
+        className="max-h-full aspect-square absolute -right-4 bottom-0 opacity-20 -z-10 mix-blend-screen"
+      />
     </section>
   )
 }

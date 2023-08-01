@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro'
 import Presentation from '../components/presentation.astro'
 import Services from '../components/services.astro'
 import Contacts from '../components/contacts.astro'
-import ContactFormer from '../components/contactform.astro'
 import ContactForm from '../components/contactform.tsx'
 import Footer from '../components/footer.astro'
 const FORM_KEY = import.meta.env.FORM_ACCESS_KEY
@@ -34,7 +33,6 @@ const FORM_KEY = import.meta.env.FORM_ACCESS_KEY
     <Services />
     <Contacts />
   </div>
-  <ContactFormer />
   <ContactForm client:idle formKey={FORM_KEY} />
   <Footer />
 </Layout>

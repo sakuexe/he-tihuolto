@@ -61,7 +61,7 @@ export default function MobileMenu(props: MenuProps) {
         <ul className="flex flex-col items-end">
           <li className="flex items-center gap-x-2">
             <a href="">Yhteydenotto Lomake</a>
-            <img src="/images/form.svg" alt="Lomake ikoni" className="w-8" />
+            <img src="./images/form.svg" alt="Lomake ikoni" className="w-8" />
           </li>
           {contacts.map((contact, index: number) => (
             <li key={index} className="flex items-center gap-x-2">
@@ -72,7 +72,7 @@ export default function MobileMenu(props: MenuProps) {
                 {contact.contacts[0].value}
               </a>
               <img
-                src={`${contact.image}`}
+                src={`./${contact.image}`}
                 alt={`${contact.contacts[0].type} ikoni`}
                 className="w-8"
               />

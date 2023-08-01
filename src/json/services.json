@@ -2,11 +2,11 @@
   {
     "title": "Palvelu #1",
     "description": "Mattis in tortor ultrices sed suspendisse volutpat scelerisque. Ut sit pellentesque volutpat neque vel fermentum eget amet. Facilisis rutrum cras felis donec erat. Sapien quam faucibus.",
-    "image": "/images/cleaning-mop.svg"
+    "image": "./images/cleaning-mop.svg"
   },
   {
     "title": "Palvelu #2",
     "description": "Mattis in tortor ultrices sed suspendisse volutpat scelerisque. Ut sit pellentesque volutpat neque vel fermentum eget amet. Facilisis rutrum cras felis donec erat. Sapien quam faucibus.",
-    "image": "/images/house.svg"
+    "image": "./images/house.svg"
   }
 ]

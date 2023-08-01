@@ -85,7 +85,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
               transition-all hover:drop-shadow-xl"
           >
             <div className="flex justify-center items-center bg-secondary aspect-square px-2 rounded-l-md">
-              <img src="/images/email.svg" alt="" className="h-7 invert" />
+              <img src="./images/email.svg" alt="" className="h-7 invert" />
             </div>
             <input
               type="email"
@@ -112,7 +112,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
             <span className="flex-grow my-auto">Lähetä viestisi</span>
             <div className="bg-secondary flex items-center justify-center rounded-r-md aspect-square px-2">
               <img
-                src="/images/send.svg"
+                src="./images/send.svg"
                 alt=""
                 className="h-7 invert opacity-80"
               />
@@ -124,7 +124,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
         <input type="hidden" name="replyTo" value="@" />
       </form>
       <img
-        src="/images/hetitree.png"
+        src="./images/hetitree.png"
         alt=""
         role="presentation"
         className="max-h-full aspect-square absolute -right-4 bottom-0 opacity-20 -z-10 mix-blend-screen"

@@ -1,7 +1,7 @@
 [
   {
     "title": "Puhelimitse",
-    "image": "/images/phone.svg",
+    "image": "./images/phone.svg",
     "contacts": [
       {
         "name": "päänumero",
@@ -15,7 +15,7 @@
   },
   {
     "title": "Sosiaalisessa mediassa",
-    "image": "/images/socialmedia.svg",
+    "image": "./images/socialmedia.svg",
     "contacts": [
       {
         "name": "Instagram",
@@ -31,7 +31,7 @@
   },
   {
     "title": "Sähköpostilla",
-    "image": "/images/email.svg",
+    "image": "./images/email.svg",
     "contacts": [
       {
         "value": "hetihuolto@gmail.com",

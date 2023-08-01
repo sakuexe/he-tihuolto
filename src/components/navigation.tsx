@@ -11,12 +11,12 @@ export default function Navigation() {
       >
         <div className="flex items-end gap-x-2 h-12">
           <img
-            src="/images/hetitree.svg"
+            src="./images/hetitree.svg"
             alt="He-Ti Huolto -logo"
             className="h-full"
           />
           <img
-            src="/images/heti-teksti.svg"
+            src="./images/heti-teksti.svg"
             alt=""
             role="presentation"
             className="h-3/4"

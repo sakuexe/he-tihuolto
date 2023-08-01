@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Menu from '../components/menu.tsx'
 import Presentation from '../components/presentation.astro'
 import Services from '../components/services.astro'
 import Contacts from '../components/contacts.astro'
-import ContactForm from '../components/contactform.astro'
+import ContactFormer from '../components/contactform.astro'
+import ContactForm from '../components/contactform.tsx'
 import Footer from '../components/footer.astro'
+const FORM_KEY = import.meta.env.FORM_ACCESS_KEY
 ---
 
 <Layout title="He-Ti Huolto">
@@ -28,11 +29,12 @@ import Footer from '../components/footer.astro'
       />
     </div>
   </header>
-    <div class="mt-16 mb-20 space-y-20">
-      <Presentation />
-      <Services />
-      <Contacts />
-    </div>
-  <ContactForm />
+  <div class="mt-16 mb-20 space-y-20">
+    <Presentation />
+    <Services />
+    <Contacts />
+  </div>
+  <ContactFormer />
+  <ContactForm client:idle formKey={FORM_KEY} />
   <Footer />
 </Layout>

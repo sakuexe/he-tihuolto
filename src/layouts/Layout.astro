@@ -17,7 +17,7 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-w-[356px] selection:bg-primary-500 selection:font-mono">
+  <body class="min-w-[356px]">
     <Navigation client:idle />
     <slot />
   </body>
@@ -53,7 +53,7 @@ const { title } = Astro.props
       monospace;
   }
   #form {
-    background-image: url('/images/hero.jpg');
+    /*background-image: url('/images/hero.jpg');*/
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

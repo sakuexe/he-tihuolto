@@ -18,7 +18,7 @@ export default function ContactCard({
   const isEven = index % 2 === 0
 
   return (
-    <div className="flex gap-x-5 w-[320px]">
+    <div className="flex gap-x-5 w-[320px]" key={index}>
       <div className="relative flex items-center justify-center w-20">
         <img
           src={contact.image}
@@ -44,7 +44,7 @@ export default function ContactCard({
               </p>
             )
           return (
-            <div>
+            <div key={index}>
               <p>
                 {contact.name && `${contact.name}: `}
                 <a href={contact.link} className="underline">

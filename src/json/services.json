@@ -1,12 +1,27 @@
 [
   {
-    "title": "Palvelu #1",
-    "description": "Mattis in tortor ultrices sed suspendisse volutpat scelerisque. Ut sit pellentesque volutpat neque vel fermentum eget amet. Facilisis rutrum cras felis donec erat. Sapien quam faucibus.",
+    "title": "Siivouspalvelut",
+    "description": "Puhtaus on viihtyisän ympäristön perusta. Siivouspalvelumme kattavat kaiken yleissiivouksesta erikoispuhdistuksiin, jotta tilat säilyvät raikkaina ja hygieenisinä.",
     "image": "./images/cleaning-mop.svg"
   },
   {
-    "title": "Palvelu #2",
-    "description": "Mattis in tortor ultrices sed suspendisse volutpat scelerisque. Ut sit pellentesque volutpat neque vel fermentum eget amet. Facilisis rutrum cras felis donec erat. Sapien quam faucibus.",
+    "title": "Talonhuoltopalvelut",
+    "description": "Ammattitaitoiset talonmiehemme pitävät kiinteistönne kunnossa vuoden ympäri. Hoidamme pienet korjaukset, valvomme teknisiä järjestelmiä ja varmistamme, että kiinteistönne toimii moitteettomasti.",
     "image": "./images/house.svg"
+  },
+  {
+    "title": "Lumi- ja Vihertyöt",
+    "description": "Hoidamme kiinteistönne lumi- sekä vihertyöt ammattitaidolla vuodenajasta huolimatta. Pidämme huolen, että kiinteistönne piha-alueet ovat turvalliset ja viihtyisät.",
+    "image": "./images/lawn-mowner.svg"
+  },
+  {
+    "title": "Hälytyspalvelu",
+    "description": "Kiinteistön hätätilanteet eivät katso aikaa. Siksi tarjoamme ympärivuorokautisen hälytyspalvelun, joka on valmiina reagoimaan nopeasti ja tehokkaasti kriittisissä tilanteissa.",
+    "image": "./images/phone-dark.svg"
+  },
+  {
+    "title": "Jätehuolto",
+    "description": "Jätehuolto on tärkeä osa kiinteistön arkea. Hoidamme jätteiden keräyksen ja kuljetuksen sekä varmistamme, että kiinteistönne jätehuolto on aina asianmukaisesti järjestetty.",
+    "image": "./images/trash.svg"
   }
 ]

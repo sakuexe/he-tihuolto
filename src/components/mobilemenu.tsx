@@ -1,6 +1,7 @@
 import services from '../json/services.json'
 import contactsJson from '../json/contact.json'
 import type { Dispatch, MouseEventHandler, SetStateAction } from 'react'
+import { useEffect, useRef } from 'react'
 
 type Contact = {
   title: string
@@ -19,15 +20,34 @@ type MenuProps = {
 
 export default function MobileMenu(props: MenuProps) {
   const contacts = contactsJson as Contact[]
+  const MenuRef = useRef<HTMLDivElement>(null)
 
   const handleLinkClick: MouseEventHandler<HTMLAnchorElement> = () => {
     props.toggleVisibility(false)
   }
 
+  const handleOutsideClick = (event: MouseEvent) => {
+    // functionality for closing the menu when clicking outside of it
+    // also checks if the clicked element is the nav button
+    const clickedElement = event.target as HTMLElement
+    if (clickedElement.id === 'nav-button') return
+    if (MenuRef.current && !MenuRef.current.contains(clickedElement)) {
+      props.toggleVisibility(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleOutsideClick)
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  })
+
   return (
     <section
+      ref={MenuRef}
       className={`fixed flex top-0 right-0 w-full max-w-md h-screen bg-secondary-600
-          rounded-l-2xl drop-shadow-md z-30 text-primary transition-all lg:hidden
+          rounded-l-2xl drop-shadow-xl z-30 text-primary transition-all lg:hidden
           ${props.isVisible ? 'translate-x-0' : 'translate-x-full'}`}
     >
       <div className="mt-28 mb-8 mx-5 flex flex-col justify-between flex-grow">
@@ -51,11 +71,7 @@ export default function MobileMenu(props: MenuProps) {
             </a>
             <div className="flex flex-col gap-y-2">
               {services.map((service, index: number) => (
-                <a
-                  href={`#${service.title}`}
-                  key={index}
-                  onClick={handleLinkClick}
-                >
+                <a href={'#services'} key={index} onClick={handleLinkClick}>
                   {service.title}
                 </a>
               ))}

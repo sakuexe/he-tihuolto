@@ -23,9 +23,10 @@ export default function Navigation() {
           />
         </div>
         <button
+          id="nav-button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="space-y-[5px] w-10 flex flex-col items-end justify-center
-        transition-all z-50"
+        transition-all z-50 [&>div]:pointer-events-none"
         >
           <div
             className={`h-[5px] bg-primary rounded-lg transition-all ${

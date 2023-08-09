@@ -82,7 +82,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
         <div className="flex flex-col gap-y-2">
           <div
             className="rounded-md bg-primary flex
-              transition-all hover:drop-shadow-xl"
+              transition-all hover:drop-shadow-xl focus-within:bg-secondary-200"
           >
             <div className="flex justify-center items-center bg-secondary aspect-square px-2 rounded-l-md">
               <img src="./images/email.svg" alt="" className="h-7 invert" />
@@ -91,8 +91,9 @@ export default function ContactForm({ formKey }: { formKey: string }) {
               type="email"
               name="$Sähköposti:"
               placeholder="sähköposti@email.com"
+              required
               onChange={handleChange}
-              className="rounded-r-md bg-transparent py-3 px-4 w-full"
+              className="rounded-r-md bg-transparent py-3 px-4 w-full focus:outline-none"
             />
           </div>
           <textarea
@@ -100,21 +101,22 @@ export default function ContactForm({ formKey }: { formKey: string }) {
             required
             rows={5}
             placeholder="Viestisi tähän..."
+            spellCheck="false"
             onChange={handleChange}
             className="rounded-md bg-primary py-3 px-4 w-full resize-none
-            transition-all hover:drop-shadow-xl"
+            transition-all hover:drop-shadow-xl focus:outline-none focus:bg-secondary-200"
           ></textarea>
           <button
             type="submit"
             className="flex bg-primary rounded-md w-52 h-12
-          transition-all hover:drop-shadow-xl"
+          transition-all group hover:bg-secondary-200 hover:drop-shadow-xl active:scale-90"
           >
             <span className="flex-grow my-auto">Lähetä viestisi</span>
             <div className="bg-secondary flex items-center justify-center rounded-r-md aspect-square px-2">
               <img
                 src="./images/send.svg"
                 alt=""
-                className="h-7 invert opacity-80"
+                className="h-7 invert opacity-80 transition-all group-hover:-rotate-90"
               />
             </div>
           </button>

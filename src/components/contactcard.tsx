@@ -18,13 +18,15 @@ export default function ContactCard({
   const isEven = index % 2 === 0
 
   return (
-    <div className="flex gap-x-5 w-[320px]" key={index}>
+    <div className="flex gap-x-5 w-[320px] group" key={index}>
       <div className="relative flex items-center justify-center w-20">
         <img
           src={contact.image}
           alt={`${contact.title} -ikoni`}
           role="menuitem"
-          className="invert"
+          className={`invert transition-all group-hover:scale-125
+            group-hover:drop-shadow-lg
+            group-hover:${isEven ? 'rotate-12' : '-rotate-12'}`}
         />
         <div
           className={`absolute inset-0 m-auto w-5/6 aspect-square 

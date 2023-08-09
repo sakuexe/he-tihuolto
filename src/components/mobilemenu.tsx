@@ -1,6 +1,6 @@
 import services from '../json/services.json'
 import contactsJson from '../json/contact.json'
-import type { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, MouseEventHandler, SetStateAction } from 'react'
 
 type Contact = {
   title: string
@@ -14,11 +14,15 @@ type Contact = {
 
 type MenuProps = {
   isVisible: boolean
-  toggleVisibility: () => void
+  toggleVisibility: Dispatch<SetStateAction<boolean>>
 }
 
 export default function MobileMenu(props: MenuProps) {
   const contacts = contactsJson as Contact[]
+
+  const handleLinkClick: MouseEventHandler<HTMLAnchorElement> = () => {
+    props.toggleVisibility(false)
+  }
 
   return (
     <section
@@ -29,38 +33,64 @@ export default function MobileMenu(props: MenuProps) {
       <div className="mt-28 mb-8 mx-5 flex flex-col justify-between flex-grow">
         <ul className="text-center space-y-8">
           <li className="space-y-2">
-            <a href="#presentation" className="font-bold text-xl">
+            <a
+              href="#presentation"
+              className="font-bold text-xl"
+              onClick={handleLinkClick}
+            >
               Esittely
             </a>
           </li>
           <li className="space-y-2">
-            <a href="#services" className="font-bold text-xl">
+            <a
+              href="#services"
+              className="font-bold text-xl"
+              onClick={handleLinkClick}
+            >
               Palvelumme
             </a>
             <div className="flex flex-col gap-y-2">
               {services.map((service, index: number) => (
-                <a href={`#${service.title}`} key={index}>
+                <a
+                  href={`#${service.title}`}
+                  key={index}
+                  onClick={handleLinkClick}
+                >
                   {service.title}
                 </a>
               ))}
             </div>
           </li>
           <li className="space-y-2">
-            <a href="#contacts" className="font-bold text-xl">
+            <a
+              href="#contacts"
+              className="font-bold text-xl"
+              onClick={handleLinkClick}
+            >
               Yhteystiedot
             </a>
             <div className="flex flex-col gap-y-2">
-              <a href="#contacts">Puhelinnumero</a>
-              <a href="#contacts">Sosiaaliset mediat</a>
-              <a href="#contacts">Sähköposti</a>
-              <a href="#form">Lomake</a>
+              <a href="#contacts" onClick={handleLinkClick}>
+                Puhelinnumero
+              </a>
+              <a href="#contacts" onClick={handleLinkClick}>
+                Sosiaaliset mediat
+              </a>
+              <a href="#contacts" onClick={handleLinkClick}>
+                Sähköposti
+              </a>
+              <a href="#form" onClick={handleLinkClick}>
+                Lomake
+              </a>
             </div>
           </li>
         </ul>
 
         <ul className="flex flex-col items-end">
           <li className="flex items-center gap-x-2">
-            <a href="">Yhteydenotto Lomake</a>
+            <a href="#form" onClick={handleLinkClick}>
+              Yhteydenotto Lomake
+            </a>
             <img src="./images/form.svg" alt="Lomake ikoni" className="w-8" />
           </li>
           {contacts.map((contact, index: number) => (
@@ -68,6 +98,7 @@ export default function MobileMenu(props: MenuProps) {
               <a
                 href={`${contact.contacts[0].link || '#contacts'}`}
                 key={index}
+                onClick={handleLinkClick}
               >
                 {contact.contacts[0].value}
               </a>

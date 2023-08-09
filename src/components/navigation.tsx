@@ -44,12 +44,7 @@ export default function Navigation() {
           ></div>
         </button>
       </nav>
-      <MobileMenu
-        isVisible={isMenuOpen}
-        toggleVisibility={() => {
-          setIsMenuOpen
-        }}
-      />
+      <MobileMenu isVisible={isMenuOpen} toggleVisibility={setIsMenuOpen} />
     </>
   )
 }

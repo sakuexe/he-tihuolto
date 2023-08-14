@@ -18,7 +18,7 @@ export default function ContactCard({
   const isEven = index % 2 === 0
 
   return (
-    <div className="flex gap-x-5 w-[320px] group" key={index} role="menuitem">
+    <div className="flex gap-x-5 w-[320px] group" key={index}>
       <div className="relative flex items-center justify-center w-20">
         <img
           src={contact.image}

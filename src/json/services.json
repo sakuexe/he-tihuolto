@@ -20,8 +20,8 @@
     "image": "./images/phone-dark.svg"
   },
   {
-    "title": "Jätehuolto",
-    "description": "Jätehuolto on tärkeä osa kiinteistön arkea. Hoidamme jätteiden keräyksen ja kuljetuksen sekä varmistamme, että kiinteistönne jätehuolto on aina asianmukaisesti järjestetty.",
-    "image": "./images/trash.svg"
+    "title": "Pihan muokkaustyöt",
+    "description": "Pidämme huolen myös kiinteistönne piha-alueista. Hoidamme pihan muokkaustyöt, kuten istutukset, nurmikon leikkuun ja pensaiden leikkuun.",
+    "image": "./images/garden.svg"
   }
 ]

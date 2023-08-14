@@ -28,7 +28,7 @@ export default function Card({
           role="presentation"
           draggable="false"
           className="h-full py-1 aspect-square opacity-75 transition-all 
-          scale-125 rotate-3 group-hover:scale-150"
+          scale-110 group-hover:scale-150"
         />
       </div>
       <p className="p-5 pt-3">{service.description}</p>

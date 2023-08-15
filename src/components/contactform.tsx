@@ -112,11 +112,11 @@ export default function ContactForm({ formKey }: { formKey: string }) {
           transition-all group hover:bg-secondary-200 hover:drop-shadow-xl active:scale-90"
           >
             <span className="flex-grow my-auto">Lähetä viestisi</span>
-            <div className="bg-secondary flex items-center justify-center rounded-r-md aspect-square px-2">
+            <div className="bg-secondary h-full flex items-center justify-center rounded-r-md aspect-square px-2">
               <img
                 src="./images/send.svg"
                 alt=""
-                className="h-7 invert opacity-80 transition-all group-hover:-rotate-90"
+                className="h-7 invert opacity-80 transition-all group-hover:invert-0"
               />
             </div>
           </button>

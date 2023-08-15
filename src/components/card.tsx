@@ -31,7 +31,7 @@ export default function Card({
           scale-110 group-hover:scale-150"
         />
       </div>
-      <p className="p-5 pt-3">{service.description}</p>
+      <p className="p-5 pt-3 ">{service.description}</p>
     </div>
   )
 }

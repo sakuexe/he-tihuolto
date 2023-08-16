@@ -14,19 +14,21 @@ export default function Image(props: ImageProps) {
       aria-label={props.title}
       className={`relative overflow-hidden group ${firstImageClasses}`}
     >
-      <div className="absolute w-full h-full bg-secondary z-10 mix-blend-color" />
+      <div
+        className="absolute w-full h-full bg-secondary z-10 
+        mix-blend-color group-hover:opacity-50"
+      />
       <img
         src={props.src}
         alt={props.alt}
         className="w-full h-full bg-secondary transition-all object-cover
-        grayscale
-        group-hover:scale-125"
+        grayscale group-hover:scale-125 group-hover:grayscale-0"
         loading="lazy"
       />
       <p
         className="absolute mx-auto bottom-0 flex justify-center items-center 
-        w-full h-12 z-20 backdrop-blur-md backdrop-brightness-50 transition-all
-        :opacity-100 group-hover:drop-shadow-md"
+        w-full h-12 z-20 backdrop-blur-md backdrop-brightness-50 text-sm 
+        transition-all group-hover:drop-shadow-md"
       >
         {props.title}
       </p>

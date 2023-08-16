@@ -37,23 +37,26 @@ export default function MobileMenu(props: MenuProps) {
   }
 
   const onScroll = () => {
-    let scrollHeight = window.scrollY
-    if (scrollHeight > 385) {
+    // just follow what color the nav has
+    const nav = document.querySelector('nav') as HTMLDivElement
+    if (nav.classList.contains('bg-primary')) {
       MenuRef.current?.classList.add('bg-primary')
       MenuRef.current?.classList.remove('bg-secondary')
-    } else {
-      MenuRef.current?.classList.remove('bg-primary')
-      MenuRef.current?.classList.add('bg-secondary')
+      return
     }
+    MenuRef.current?.classList.remove('bg-primary')
+    MenuRef.current?.classList.add('bg-secondary')
   }
 
   useEffect(() => {
+    // check the scroll position also at load before scrolling is done
+    onScroll()
     document.addEventListener('scroll', onScroll, false)
     document.addEventListener('mousedown', handleOutsideClick)
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick)
     }
-  }, [])
+  }, [MenuRef.current])
 
   return (
     <section

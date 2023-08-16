@@ -17,6 +17,8 @@ export default function Navigation() {
   }
 
   useEffect(() => {
+    // check the scroll position also at load before scrolling is done
+    onScroll()
     window.addEventListener('scroll', onScroll, false)
   }, [])
 
@@ -24,7 +26,7 @@ export default function Navigation() {
     <>
       <nav
         ref={NavRef}
-        className="bg-secondary fixed flex justify-between w-full top-0 z-40 mb-12
+        className="fixed flex justify-between w-full top-0 z-40 mb-12
         px-5 py-2 drop-shadow-sm lg:hidden"
       >
         <div className="flex items-end gap-x-2 h-12">
@@ -48,16 +50,19 @@ export default function Navigation() {
         transition-all z-50 [&>div]:pointer-events-none"
         >
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-full'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-full'
+            }`}
           ></div>
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-3/4'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-3/4'
+            }`}
           ></div>
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-2/4'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-2/4'
+            }`}
           ></div>
         </button>
       </nav>

@@ -58,7 +58,52 @@ export default function ContactForm({ formKey }: { formKey: string }) {
     }
   }
 
-  if (response.message) return <h1>Thank you</h1>
+  if (response.type === 'error')
+    return (
+      <section className="relative bg-secondary py-12 my-16 overflow-hidden isolate">
+        <div className="sectioncontainer">
+          <h4 className="text-xl font-bold">Jokin meni pieleen.</h4>
+          <p>
+            Kokeile uudelleen. Jos ongelma jatkuu niin yritä uudelleen hetken
+            päästä
+          </p>
+          <div>
+            <a
+              href="#form"
+              onClick={() => {
+                location.reload()
+              }}
+              className="py-4 px-6 bg-primary drop-shadow rounded-lg
+              transition-all hover:bg-secondary-700"
+            >
+              Lataa uudelleen
+            </a>
+          </div>
+        </div>
+        <img
+          src="./images/hetitree.png"
+          alt=""
+          role="presentation"
+          className="w-64 aspect-square absolute -right-4 bottom-0 opacity-20 -z-10 mix-blend-screen"
+        />
+      </section>
+    )
+
+  if (response.message)
+    return (
+      <section className="relative bg-secondary py-12 my-16 overflow-hidden isolate">
+        <div className="sectioncontainer">
+          <h4 className="text-xl font-bold">Kiitos yhteydenotosta!</h4>
+          <p>Olemme sinuun yhteydessä mahdollisimman pian. Kuulemisiin!</p>
+        </div>
+        <img
+          src="./images/hetitree.png"
+          alt=""
+          role="presentation"
+          className="w-64 aspect-square absolute -right-4 bottom-0 opacity-20 -z-10 mix-blend-screen"
+        />
+      </section>
+    )
 
   return (
     <section

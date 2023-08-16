@@ -19,7 +19,7 @@ export default function Card({
       <div
         className={`flex justify-between items-center h-12 px-5 text-xl font-bold rounded-lg
         overflow-hidden
-        ${isOdd ? 'bg-primary-200' : 'bg-secondary'}`}
+        ${isOdd ? 'bg-primary-700' : 'bg-secondary-700'}`}
       >
         <h3>{service.title}</h3>
         <img
@@ -27,8 +27,8 @@ export default function Card({
           alt=""
           role="presentation"
           draggable="false"
-          className="h-full py-1 aspect-square opacity-75 transition-all 
-          scale-110 group-hover:scale-150"
+          className="h-full py-1 aspect-square opacity-50 transition-all 
+          scale-110 group-hover:scale-150 invert"
         />
       </div>
       <p className="p-5 pt-3 ">{service.description}</p>

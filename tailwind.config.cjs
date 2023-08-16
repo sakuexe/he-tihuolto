@@ -17,8 +17,8 @@ colors['grove'] = {
   950: '#172310',
 }
 
-const primary = colors.orange
-const secondary = colors.grove
+const primary = colors.stone
+const secondary = colors.gray
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -33,8 +33,8 @@ module.exports = {
       },
       colors: {
         grove: {},
-        primary: { ...primary, DEFAULT: primary[50] },
-        secondary: { ...secondary, DEFAULT: secondary[300] },
+        primary: { ...primary, DEFAULT: primary[900] },
+        secondary: { ...secondary, DEFAULT: secondary[800] },
       },
     },
   },

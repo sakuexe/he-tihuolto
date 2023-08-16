@@ -63,18 +63,16 @@ export default function ContactForm({ formKey }: { formKey: string }) {
   return (
     <section
       id="form"
-      className="bg-secondary-600 py-12 my-16 relative overflow-hidden isolate"
+      className="bg-secondary py-12 my-16 relative overflow-hidden isolate"
     >
       <form
         action="https://api.staticforms.xyz/submit"
         method="post"
         onSubmit={handleSubmit}
-        className="sectioncontainer text-secondary-700"
+        className="sectioncontainer"
       >
-        <h4 className="text-primary text-xl font-bold">
-          Yhteydenotto lomakkeella
-        </h4>
-        <p className="text-primary">
+        <h4 className="text-xl font-bold">Yhteydenotto lomakkeella</h4>
+        <p>
           Jätä meille sähköpostiosoitteesi ja viestisi, niin olemme sinuun pian
           yhteydessä sähköpostilla. Voit myös jättää muutakin tietoa taikka
           kysymyksiä. Pyrimme vastaamaan viesteihin heti kun on mahdollista.
@@ -82,10 +80,10 @@ export default function ContactForm({ formKey }: { formKey: string }) {
         <div className="flex flex-col gap-y-2">
           <div
             className="rounded-md bg-primary flex
-              transition-all hover:drop-shadow-xl focus-within:bg-secondary-200"
+              transition-all hover:drop-shadow-xl focus-within:bg-secondary-700"
           >
-            <div className="flex justify-center items-center bg-secondary aspect-square px-2 rounded-l-md">
-              <img src="./images/email.svg" alt="" className="h-7 invert" />
+            <div className="flex justify-center items-center bg-secondary-700 aspect-square px-2 rounded-l-md">
+              <img src="./images/email.svg" alt="" className="h-7" />
             </div>
             <input
               type="email"
@@ -104,19 +102,19 @@ export default function ContactForm({ formKey }: { formKey: string }) {
             spellCheck="false"
             onChange={handleChange}
             className="rounded-md bg-primary py-3 px-4 w-full resize-none
-            transition-all hover:drop-shadow-xl focus:outline-none focus:bg-secondary-200"
+            transition-all hover:drop-shadow-xl focus:outline-none focus:bg-secondary-700"
           ></textarea>
           <button
             type="submit"
             className="flex bg-primary rounded-md w-52 h-12
-          transition-all group hover:bg-secondary-200 hover:drop-shadow-xl active:scale-90"
+          transition-all group hover:bg-secondary-700 hover:drop-shadow-xl active:scale-90"
           >
             <span className="flex-grow my-auto">Lähetä viestisi</span>
-            <div className="bg-secondary h-full flex items-center justify-center rounded-r-md aspect-square px-2">
+            <div className="bg-secondary-700 h-full flex items-center justify-center rounded-r-md aspect-square px-2">
               <img
                 src="./images/send.svg"
                 alt=""
-                className="h-7 invert opacity-80 transition-all group-hover:invert-0"
+                className="h-7 transition-all group-hover:invert-0"
               />
             </div>
           </button>

@@ -23,13 +23,13 @@ export default function ContactCard({
         <img
           src={contact.image}
           alt={`${contact.title} -ikoni`}
-          className={`invert transition-all group-hover:scale-125
+          className={`transition-all group-hover:scale-125
             group-hover:drop-shadow-lg
             group-hover:${isEven ? 'rotate-12' : '-rotate-12'}`}
         />
         <div
-          className={`absolute inset-0 m-auto w-5/6 aspect-square 
-          rounded-lg -z-10 ${!isEven ? 'bg-primary-200' : 'bg-secondary'}`}
+          className={`absolute inset-0 m-auto w-9/12 aspect-square 
+          rounded-lg -z-10 ${!isEven ? 'bg-primary-700' : 'bg-secondary-700'}`}
         />
       </div>
 
@@ -40,14 +40,16 @@ export default function ContactCard({
           if (!contact.link)
             return (
               <p key={index}>
-                {contact.name}: <br />
+                <span className="opacity-75">{contact.name}:</span> <br />
                 {contact.value}
               </p>
             )
           return (
             <div key={index}>
               <p>
-                {contact.name && `${contact.name}: `}
+                <span className="opacity-75">
+                  {contact.name && `${contact.name}: `}
+                </span>
                 <a href={contact.link} className="underline">
                   {contact.value}
                 </a>

@@ -1,10 +1,18 @@
 ---
 import contactInfo from '../json/contact.json'
+type Contact = {
+  title: string
+  image: string
+  contacts: {
+    value: string
+    link?: string
+  }[]
+}
 
 const currentYear = new Date().getFullYear()
 ---
 
-<footer class="bg-secondary-600 text-primary py-10 text-sm">
+<footer class="py-10 text-sm">
   <div class="sectioncontainer max-w-2xl">
     <section class="flex gap-y-5 items-center justify-between flex-wrap">
       <div class="flex h-16 items-end gap-2">
@@ -21,9 +29,15 @@ const currentYear = new Date().getFullYear()
       </div>
       <ul class="space-y-1">
         {
-          contactInfo.map((contact) => (
+          contactInfo.map((contact: Contact) => (
             <li class="flex justify-end items-center gap-x-2">
-              {contact.contacts[0].value}{' '}
+              {!contact.contacts[0].link ? (
+                contact.contacts[0].value
+              ) : (
+                <a href={contact.contacts[0].link}>
+                  {contact.contacts[0].value}{' '}
+                </a>
+              )}
               <img
                 src={contact.image}
                 alt={`${contact.title} -ikoni`}
@@ -35,7 +49,7 @@ const currentYear = new Date().getFullYear()
       </ul>
     </section>
     <div class="space-y-2">
-      <p>
+      <p class="opacity-75">
         Olemme ylpeitä voidessamme tarjota laadukasta kiinteistöhuoltoa
         Hämeenlinnan alueella. Sitoudumme huolehtimaan kiinteistöstänne
         ammattitaitoisesti ja tarkasti, tavoitteenamme edistää yhteistä

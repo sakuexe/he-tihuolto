@@ -15,6 +15,7 @@ type Contact = {
 
 type MenuProps = {
   isVisible: boolean
+  isPrimaryColor: boolean
   toggleVisibility: Dispatch<SetStateAction<boolean>>
 }
 
@@ -36,22 +37,7 @@ export default function MobileMenu(props: MenuProps) {
     }
   }
 
-  const onScroll = () => {
-    // just follow what color the nav has
-    const nav = document.querySelector('nav') as HTMLDivElement
-    if (nav.classList.contains('bg-primary')) {
-      MenuRef.current?.classList.add('bg-primary')
-      MenuRef.current?.classList.remove('bg-secondary')
-      return
-    }
-    MenuRef.current?.classList.remove('bg-primary')
-    MenuRef.current?.classList.add('bg-secondary')
-  }
-
   useEffect(() => {
-    // check the scroll position also at load before scrolling is done
-    onScroll()
-    document.addEventListener('scroll', onScroll, false)
     document.addEventListener('mousedown', handleOutsideClick)
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick)
@@ -61,9 +47,11 @@ export default function MobileMenu(props: MenuProps) {
   return (
     <section
       ref={MenuRef}
-      className={`fixed flex top-0 right-0 w-full max-w-md h-screen bg-secondary
+      id="mobile-menu"
+      className={`fixed flex top-0 right-0 w-full max-w-md h-screen
           rounded-l-2xl drop-shadow-xl z-30 transition-all lg:hidden
-          ${props.isVisible ? 'translate-x-0' : 'translate-x-full'}`}
+          ${props.isVisible ? 'translate-x-0' : 'translate-x-full'}
+          ${props.isPrimaryColor ? 'bg-primary' : 'bg-secondary'} `}
     >
       <div className="mt-28 mb-8 mx-5 flex flex-col justify-between flex-grow">
         <ul className="text-center space-y-8">

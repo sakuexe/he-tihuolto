@@ -83,4 +83,10 @@ const { title } = Astro.props
   ::-webkit-scrollbar-thumb:hover {
     background: theme(colors.secondary.600);
   }
+  /*hide the scrollbar on phone screens*/
+  @media (max-width: 640px) {
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
 </style>

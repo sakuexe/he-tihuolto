@@ -4,12 +4,12 @@
     "image": "./images/phone.svg",
     "contacts": [
       {
-        "name": "päänumero",
-        "value": "+358 040 123 4567"
+        "name": "Jenna Heino",
+        "value": "041 312 3657"
       },
       {
-        "name": "sijaisnumero",
-        "value": "+358 0044 098 7654"
+        "name": "Jarmo Heino",
+        "value": "041 311 9979"
       }
     ]
   },
@@ -34,12 +34,8 @@
     "image": "./images/email.svg",
     "contacts": [
       {
-        "value": "hetihuolto@gmail.com",
-        "link": "mailto:hetihuolto@gmail.com"
-      },
-      {
-        "value": "hetihuoltovara@gmail.com",
-        "link": "mailto:hetihuoltovara@gmail.com"
+        "value": "jarmo.heino@hetihuolto.com",
+        "link": "mailto:hetihuolto@hetihuolto.com"
       }
     ]
   }

@@ -48,7 +48,7 @@ export default function MobileMenu(props: MenuProps) {
     <section
       ref={MenuRef}
       id="mobile-menu"
-      className={`fixed flex top-0 right-0 w-full max-w-md h-screen
+      className={`fixed flex top-0 right-0 w-full max-w-md h-[100svh]
           rounded-l-2xl drop-shadow-xl z-30 transition-all lg:hidden
           ${props.isVisible ? 'translate-x-0' : 'translate-x-full'}
           ${props.isPrimaryColor ? 'bg-primary' : 'bg-secondary'} `}

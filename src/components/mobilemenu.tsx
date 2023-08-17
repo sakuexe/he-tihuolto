@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react'
 
 type Contact = {
   title: string
+  'mobile-menu-title': string
   image: string
   contacts: {
     type: string
@@ -94,27 +95,16 @@ export default function MobileMenu(props: MenuProps) {
               Yhteystiedot
             </a>
             <div className="flex-col gap-y-2 [&>a]:opacity-75 hidden tall:flex">
-              <a
-                href="#contacts"
-                onClick={handleLinkClick}
-                className="hover:underline"
-              >
-                Puhelinnumero
-              </a>
-              <a
-                href="#contacts"
-                onClick={handleLinkClick}
-                className="hover:underline"
-              >
-                Sosiaaliset mediat
-              </a>
-              <a
-                href="#contacts"
-                onClick={handleLinkClick}
-                className="hover:underline"
-              >
-                Sähköposti
-              </a>
+              {contacts.map((contact, index: number) => (
+                <a
+                  href={`${contact.contacts[0].link || '#contacts'}`}
+                  key={index}
+                  onClick={handleLinkClick}
+                  className="hover:underline"
+                >
+                  {contact['mobile-menu-title']}
+                </a>
+              ))}
               <a
                 href="#form"
                 onClick={handleLinkClick}

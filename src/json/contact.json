@@ -1,6 +1,7 @@
 [
   {
     "title": "Puhelimitse",
+    "mobile-menu-title": "Puhelinnumero",
     "image": "./images/phone.svg",
     "contacts": [
       {
@@ -14,28 +15,13 @@
     ]
   },
   {
-    "title": "Sosiaalisessa mediassa",
-    "image": "./images/socialmedia.svg",
-    "contacts": [
-      {
-        "name": "Instagram",
-        "value": "@hetihuolto",
-        "link": "https://cdn-icons-png.flaticon.com/512/3621/3621435.png"
-      },
-      {
-        "name": "Facebook",
-        "value": "He-Ti Huolto",
-        "link": "https://img.freepik.com/premium-vector/blue-social-media-logo_197792-1759.jpg"
-      }
-    ]
-  },
-  {
     "title": "Sähköpostilla",
+    "mobile-menu-title": "Sähköpostiosoite",
     "image": "./images/email.svg",
     "contacts": [
       {
         "value": "jarmo.heino@hetihuolto.com",
-        "link": "mailto:hetihuolto@hetihuolto.com"
+        "link": "mailto:jarmo.heino@hetihuolto.com"
       }
     ]
   }

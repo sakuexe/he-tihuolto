@@ -53,8 +53,8 @@ export default function MobileMenu(props: MenuProps) {
           ${props.isVisible ? 'translate-x-0' : 'translate-x-full'}
           ${props.isPrimaryColor ? 'bg-primary' : 'bg-secondary'} `}
     >
-      <div className="mt-28 mb-8 mx-5 flex flex-col justify-between flex-grow">
-        <ul className="text-center space-y-8">
+      <div className="mt-16 mb-8 mx-5 flex flex-col justify-between flex-grow semitall:mt-28">
+        <ul className="text-center space-y-4 tall:space-y-8">
           <li className="space-y-2">
             <a
               href="#presentation"
@@ -72,7 +72,7 @@ export default function MobileMenu(props: MenuProps) {
             >
               Palvelumme
             </a>
-            <div className="flex flex-col gap-y-2">
+            <div className="flex-col gap-y-2 hidden tall:flex">
               {services.map((service, index: number) => (
                 <a
                   href={'#services'}
@@ -93,7 +93,7 @@ export default function MobileMenu(props: MenuProps) {
             >
               Yhteystiedot
             </a>
-            <div className="flex flex-col gap-y-2 [&>a]:opacity-75">
+            <div className="flex-col gap-y-2 [&>a]:opacity-75 hidden tall:flex">
               <a
                 href="#contacts"
                 onClick={handleLinkClick}

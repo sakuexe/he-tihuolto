@@ -89,4 +89,11 @@ const { title } = Astro.props
       width: 0px;
     }
   }
+  /*on short screens, hide the extra details from
+  the mobile menu*/
+  @media ( max-height: 760px ){
+    .menu-details {
+      display: none !important;
+    }
+  }
 </style>

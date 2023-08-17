@@ -30,6 +30,8 @@ module.exports = {
     extend: {
       screens: {
         xs: '400px',
+        semitall: { raw: '(min-height: 400px)' },
+        tall: { raw: '(min-height: 760px)' },
       },
       colors: {
         grove: {},

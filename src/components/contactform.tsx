@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState, useEffect, useRef } from 'react'
 
 type Response = {
   type: 'success' | 'error' | ''
@@ -10,7 +10,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
     email: '',
     subject: 'He-Ti Huolto yhteydenotto lomakkeelta',
     honeypot: '', // if any value received in this field, form submission will be ignored.
-    message: '',
+    $viesti: '',
     replyTo: '@', // this will set replyTo of email to email address entered in the form
     accessKey: formKey, // get your access key from https://www.staticforms.xyz
   })
@@ -30,6 +30,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
     console.log('submitting form')
     e.preventDefault()
     try {
+      if (!contact.$viesti || !contact.email) throw new Error('Empty fields')
       const res = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',
         body: JSON.stringify(contact),
@@ -56,7 +57,18 @@ export default function ContactForm({ formKey }: { formKey: string }) {
         message: 'An error occured while submitting the form',
       })
     }
+    console.log('form submitted', contact)
   }
+
+  const emailRef = useRef<HTMLInputElement>(null)
+  const messageRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    if (!emailRef.current) return
+    emailRef.current.value = ''
+    if (!messageRef.current) return
+    contact.$viesti = messageRef.current.value
+  }, [])
 
   if (response.type === 'error')
     return (
@@ -65,19 +77,16 @@ export default function ContactForm({ formKey }: { formKey: string }) {
           <h4 className="text-xl font-bold">Jokin meni pieleen.</h4>
           <p>
             Kokeile uudelleen. Jos ongelma jatkuu niin yritä uudelleen hetken
-            päästä
+            päästä. Tarkista tietosi vielä kerran.
           </p>
           <div>
-            <a
-              href="#form"
-              onClick={() => {
-                location.reload()
-              }}
+            <button
+              onClick={() => location.reload()}
               className="py-4 px-6 bg-primary drop-shadow rounded-lg
               transition-all hover:bg-secondary-700"
             >
-              Lataa uudelleen
-            </a>
+              Kokeile uudelleen
+            </button>
           </div>
         </div>
         <img
@@ -89,7 +98,7 @@ export default function ContactForm({ formKey }: { formKey: string }) {
       </section>
     )
 
-  if (response.message)
+  if (response.type === 'success')
     return (
       <section className="relative bg-secondary py-12 my-16 overflow-hidden isolate">
         <div className="sectioncontainer">
@@ -131,8 +140,9 @@ export default function ContactForm({ formKey }: { formKey: string }) {
               <img src="./images/email.svg" alt="" className="h-7" />
             </div>
             <input
+              ref={emailRef}
               type="email"
-              name="$Sähköposti:"
+              name="email"
               placeholder="sähköposti@email.com"
               required
               onChange={handleChange}
@@ -140,7 +150,8 @@ export default function ContactForm({ formKey }: { formKey: string }) {
             />
           </div>
           <textarea
-            name="$Viesti:"
+            ref={messageRef}
+            name="$viesti"
             required
             rows={5}
             placeholder="Viestisi tähän..."

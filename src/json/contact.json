@@ -20,6 +20,10 @@
     "image": "./images/email.svg",
     "contacts": [
       {
+        "value": "huolto@hetihuolto.com",
+        "link": "mailto:huolto@hetihuolto.com"
+      },
+      {
         "value": "jarmo.heino@hetihuolto.com",
         "link": "mailto:jarmo.heino@hetihuolto.com"
       }

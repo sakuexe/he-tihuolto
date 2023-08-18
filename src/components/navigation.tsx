@@ -25,7 +25,7 @@ export default function Navigation() {
     onScroll()
     window.addEventListener('scroll', onScroll, false)
     // when the window loses focus, close the menu
-    window.addEventListener('blur', () => setIsMenuOpen(false), false)
+    // window.addEventListener('blur', () => setIsMenuOpen(false), false)
   }, [])
 
   const isNavColorPrimary = () => {
@@ -64,16 +64,19 @@ export default function Navigation() {
         transition-all z-50 [&>div]:pointer-events-none"
         >
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-full'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-full'
+            }`}
           ></div>
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-3/4'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-3/4'
+            }`}
           ></div>
           <div
-            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${isMenuOpen ? 'w-full' : 'w-2/4'
-              }`}
+            className={`h-[5px] bg-primary-100 rounded-lg transition-all ${
+              isMenuOpen ? 'w-full' : 'w-2/4'
+            }`}
           ></div>
         </button>
       </nav>

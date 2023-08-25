@@ -5,7 +5,10 @@ import Services from '../components/services.astro'
 import Contacts from '../components/contacts.astro'
 import ContactForm from '../components/contactform.tsx'
 import Footer from '../components/footer.astro'
-const FORM_KEY = "1960cea7-d5fa-4b61-9b76-e5da3dc6cbe8"
+// check if we are in production or development
+const isProd = import.meta.env.PROD
+// and set the form key accordingly
+const FORM_KEY = isProd ? import.meta.env.PROD_FORM_KEY : import.meta.env.DEV_FORM_KEY
 ---
 
 <Layout title="He-Ti Huolto">

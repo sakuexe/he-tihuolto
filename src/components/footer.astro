@@ -30,7 +30,7 @@ const currentYear = new Date().getFullYear()
       <ul class="space-y-1">
         {
           contactInfo.map((contact: Contact) => (
-            <li class="flex justify-end items-center gap-x-2">
+            <li class="flex justify-end items-center gap-x-2 select-all">
               {!contact.contacts[0].link ? (
                 contact.contacts[0].value
               ) : (
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear()
               <img
                 src={contact.image}
                 alt={`${contact.title} -ikoni`}
-                class="opacity-75 w-6 aspect-square"
+                class="opacity-75 w-6 aspect-square select-none"
               />
             </li>
           ))

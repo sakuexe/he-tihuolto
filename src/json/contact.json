@@ -5,6 +5,10 @@
     "image": "./images/phone.svg",
     "contacts": [
       {
+        "name": "24/7 Päivystys",
+        "value": "041 312 4156"
+      },
+      {
         "name": "Jenna Heino",
         "value": "041 312 3657"
       },

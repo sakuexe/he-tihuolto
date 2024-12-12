@@ -6,6 +6,6 @@ import react from '@astrojs/react'
 export default defineConfig({
   integrations: [tailwind(), react()],
   allowImportingTsExtensions: true,
-  site: 'https://sakuexe.github.io',
-  base: '/he-tihuolto',
+  site: 'https://hetihuolto.com',
+  base: '/',
 })
